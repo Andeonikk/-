@@ -6,7 +6,7 @@
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Andeonikk/-.git
-   cd название-проекта
+   cd myproject
 
 ## Запуск
 `python manage.py runserver`
