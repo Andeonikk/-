@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование банковских реквизитов</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Банковские реквизиты</h2>
+
+        <!-- Форма для ввода/редактирования -->
+        <form method="post" action="{% url 'accounts:bank_details_save' %}">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="bik" class="form-label">БИК</label>
+                <input type="text"
+                       id="bik"
+                       name="bik"
+                       class="form-control"
+                       value="{{ org_data.bik }}"
+                       placeholder="Например: 044525974">
+            </div>
+
+            <div class="mb-3">
+                <label for="bank_name" class="form-label">Наименование банка</label>
+                <input type="text"
+                       id="bank_name"
+                       name="bank_name"
+                       class="form-control"
+                       value="{{ org_data.bank_name }}"
+                       placeholder="Полное название банка">
+            </div>
+
+            <div class="mb-3">
+                <label for="correspondent_account" class="form-label">Номер корсчёта</label>
+                <input type="text"
+                       id="correspondent_account"
+                       name="correspondent_account"
+                       class="form-control"
+                       value="{{ org_data.correspondent_account }}"
+                       placeholder="20 цифр">
+            </div>
+
+            <div class="mb-3">
+                <label for="checking_account" class="form-label">Номер расчётного счёта</label>
+                <input type="text"
+                       id="checking_account"
+                       name="checking_account"
+                       class="form-control"
+                       value="{{ org_data.checking_account }}"
+                       placeholder="20 цифр">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a href="{% url 'accounts:dashboard' %}" class="btn btn-secondary">Вернуться в личный кабинет</a>
+        </form>
+
+        <!-- Вывод сообщения об успехе -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success mt-3">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

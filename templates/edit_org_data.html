@@ -1,0 +1,13 @@
+{% block content %}
+{% load static %}
+<div class="container">
+    <h2>Редактирование данных организации</h2>
+    <link rel="stylesheet" href="{% static 'edit_org_data.css' %}">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Сохранить изменения</button>
+        <a href="{% url 'accounts:dashboard' %}" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+{% endblock %}

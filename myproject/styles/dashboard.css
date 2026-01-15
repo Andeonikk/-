@@ -1,0 +1,166 @@
+/* Базовый сброс и настройка шрифтов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fff9c4 0%, #ffffff 100%);
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.4s ease;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Заголовок */
+h2 {
+    color: #d4a017;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ffd54f;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    animation: growBar 0.6s ease-in-out;
+}
+
+/* Текст с метками */
+p {
+    font-size: 1rem;
+    margin: 18px 0;
+    padding-left: 10px;
+    border-left: 4px solid #ffd54f;
+    background-color: #fffde7;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+p:hover {
+    transform: translateX(5px);
+    box-shadow: 5px 5px 15px rgba(253, 216, 53, 0.15);
+}
+
+strong {
+    color: #8d6e63;
+    font-weight: 600;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.35s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+    background: #d4a017;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #b38808;
+    color: white;
+}
+
+.btn-info {
+    background: #ffecb3;
+    color: #4e342e;
+}
+
+.btn-info:hover {
+    background: #ffc107;
+    color: white;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #555;
+}
+
+.btn-secondary:hover {
+    background: #bdbdbd;
+    color: white;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growBar {
+    from { width: 0; }
+    to { width: 80px; }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        margin: 14px 0;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        padding: 14px;
+    }
+}

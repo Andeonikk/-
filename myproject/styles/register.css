@@ -1,0 +1,120 @@
+/* Общие настройки */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Контейнер формы */
+.registration-form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Заголовок */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Сообщения об ошибках/успехе */
+.messages {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.messages li {
+    list-style: none;
+    padding: 5px;
+}
+
+.messages .error {
+    background-color: #ffebee;
+    color: #d50000;
+    border-left: 3px solid #d50000;
+}
+
+.messages .success {
+    background-color: #e8fbeb;
+    color: #2e7d32;
+    border-left: 3px solid #2e7d32;
+}
+
+/* Поля формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Ошибки полей формы */
+.error {
+    color: #d50000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Кнопка отправки */
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Ссылка "Войти" */
+a {
+    text-decoration: none;
+    color: #1e88e5;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

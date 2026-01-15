@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение email</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'verify_login_code.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Введите код из письма</h2>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.code.id_for_label }}">Код подтверждения:</label>
+                {{ form.code }}
+                {% if form.code.errors %}
+                    <div class="error">
+                        {% for error in form.code.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button type="submit">Подтвердить</button>
+        </form>
+
+        <p><a href="{% url 'accounts:login' %}">Повторить вход</a></p>
+    </div>
+</body>
+</html>

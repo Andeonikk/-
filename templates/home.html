@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвойсбокс — Вход/Регистрация</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo">Инвойсбокс</div>
+        <p class="instruction">Войдите или зарегистрируйтесь, чтобы выставить счёт</p>
+        
+        <p><a href="{% url 'accounts:register' %}">Регистрация</a></p>
+        <p><a href="{% url 'accounts:login' %}">Вход</a></p>
+        
+        <div class="terms">
+            Продолжая, вы соглашаетесь с условиями
+            <a href="#" class="link">Оферты</a> и
+            <a href="#" class="link">Политикой обработки персональных данных</a>.
+            <a href="#" class="link">Передаваемые данные</a>
+        </div>
+    </div>
+</body>
+</html>
