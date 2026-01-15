@@ -5,7 +5,7 @@
 ## Установка
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-юзернейм/название-проекта.git
+   git clone https://github.com/Andeonikk/-.git
    cd название-проекта
 
 ## Запуск
